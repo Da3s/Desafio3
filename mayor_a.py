@@ -18,10 +18,19 @@ ventas = {
 }
 
 #valor_supera = float(input('Ingrese monto a comparar: '))
-superan = []
+superan = {
+}
 
 for mes, monto in ventas.items():
     if monto > valor_supera:
-        superan.append((mes, monto))
+        superan[mes] = monto
 
+print(f'Los meses en los que las ventas superan el monto de {valor_supera} son: {superan}')
+
+
+print('---------------------------------------------------')
+
+# Comprehesion
+
+superan = {mes: monto for mes, monto in ventas.items() if monto > valor_supera}
 print(f'Los meses en los que las ventas superan el monto de {valor_supera} son: {superan}')
